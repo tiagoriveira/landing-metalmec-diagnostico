@@ -215,6 +215,13 @@
             line-height: 1.4;
         }
 
+        .form-group .optional-label {
+            color: #999;
+            font-size: 13px;
+            font-weight: 400;
+            margin-left: 4px;
+        }
+
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -240,6 +247,10 @@
         .form-group textarea {
             resize: vertical;
             min-height: 80px;
+        }
+
+        .form-group textarea.large {
+            min-height: 120px;
         }
 
         .form-group input::placeholder,
@@ -497,7 +508,7 @@
                         <div class="progress-bar">
                             <div class="progress-fill" id="progressFill"></div>
                         </div>
-                        <div class="progress-text"><span id="currentQuestion">1</span> de <span id="totalQuestions">20</span></div>
+                        <div class="progress-text"><span id="currentQuestion">1</span> de <span id="totalQuestions">21</span></div>
                     </div>
 
                     <form id="diagnosticoForm">
@@ -720,14 +731,6 @@
                             <label>Como você gerencia seus fornecedores de material? *</label>
                             <div class="radio-group">
                                 <div class="radio-option">
-                                    <input type="radio" id="forn_sistema" name="gestao_fornecedores" value="Temos um sistema de controle" required>
-                                    <label for="forn_sistema">Temos um sistema de controle</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="forn_planilha" name="gestao_fornecedores" value="Controlamos por planilhas ou cadernos">
-                                    <label for="forn_planilha">Controlamos por planilhas ou cadernos</label>
-                                </div>
-                                <div class="radio-option">
                                     <input type="radio" id="forn_sem_controle" name="gestao_fornecedores" value="Não temos um controle formal">
                                     <label for="forn_sem_controle">Não temos um controle formal</label>
                                 </div>
@@ -781,6 +784,15 @@
                             <textarea id="problema_unico" name="problema_unico" required></textarea>
                         </div>
 
+                        <!-- NOVA PERGUNTA: CAMPO ABERTO OPCIONAL -->
+                        <div class="form-group hidden" data-question="21">
+                            <label for="contexto_adicional">
+                                Há mais algum detalhe sobre sua operação que você acha importante mencionar?
+                                <span class="optional-label">(opcional)</span>
+                            </label>
+                            <textarea id="contexto_adicional" name="contexto_adicional" class="large" placeholder="Ex: sazonalidade do negócio, projetos especiais em andamento, tentativas anteriores de solução, peculiaridades da sua operação, etc."></textarea>
+                        </div>
+
                         <div class="button-group" id="buttonGroup" style="display: none;">
                             <button type="button" class="btn btn-back" id="btnBack">Voltar</button>
                             <button type="button" class="btn btn-next" id="btnNext">Próximo</button>
@@ -819,7 +831,7 @@
 
         // Configuração do formulário dinâmico
         let currentQuestion = 1;
-        const totalQuestions = 20;
+        const totalQuestions = 21;
         let formData = {};
 
         const form = document.getElementById('diagnosticoForm');
@@ -828,6 +840,10 @@
         const buttonGroup = document.getElementById('buttonGroup');
         const progressFill = document.getElementById('progressFill');
         const currentQuestionSpan = document.getElementById('currentQuestion');
+        const totalQuestionsSpan = document.getElementById('totalQuestions');
+
+        // Atualizar total de questões
+        totalQuestionsSpan.textContent = totalQuestions;
 
         // Mostrar primeira pergunta
         function showQuestion(questionNumber) {
@@ -961,4 +977,12 @@
         showQuestion(1);
     </script>
 </body>
-</html>
+</html>sistema" name="gestao_fornecedores" value="Temos um sistema de controle" required>
+                                    <label for="forn_sistema">Temos um sistema de controle</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_planilha" name="gestao_fornecedores" value="Controlamos por planilhas ou cadernos">
+                                    <label for="forn_planilha">Controlamos por planilhas ou cadernos</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_
