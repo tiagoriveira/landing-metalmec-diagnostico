@@ -731,6 +731,14 @@
                             <label>Como você gerencia seus fornecedores de material? *</label>
                             <div class="radio-group">
                                 <div class="radio-option">
+                                    <input type="radio" id="forn_sistema" name="gestao_fornecedores" value="Temos um sistema de controle" required>
+                                    <label for="forn_sistema">Temos um sistema de controle</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_planilha" name="gestao_fornecedores" value="Controlamos por planilhas ou cadernos">
+                                    <label for="forn_planilha">Controlamos por planilhas ou cadernos</label>
+                                </div>
+                                <div class="radio-option">
                                     <input type="radio" id="forn_sem_controle" name="gestao_fornecedores" value="Não temos um controle formal">
                                     <label for="forn_sem_controle">Não temos um controle formal</label>
                                 </div>
@@ -784,7 +792,7 @@
                             <textarea id="problema_unico" name="problema_unico" required></textarea>
                         </div>
 
-                        <!-- NOVA PERGUNTA: CAMPO ABERTO OPCIONAL -->
+                        <!-- NOVA PERGUNTA 21: CAMPO ABERTO OPCIONAL -->
                         <div class="form-group hidden" data-question="21">
                             <label for="contexto_adicional">
                                 Há mais algum detalhe sobre sua operação que você acha importante mencionar?
@@ -977,12 +985,4 @@
         showQuestion(1);
     </script>
 </body>
-</html>sistema" name="gestao_fornecedores" value="Temos um sistema de controle" required>
-                                    <label for="forn_sistema">Temos um sistema de controle</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="forn_planilha" name="gestao_fornecedores" value="Controlamos por planilhas ou cadernos">
-                                    <label for="forn_planilha">Controlamos por planilhas ou cadernos</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="forn_
+</html>
