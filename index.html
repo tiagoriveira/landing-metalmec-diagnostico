@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções Customizadas para Metalmecânicas | Tiago Ribeiro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #ff6b35;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: #ff6b35;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* STORY SECTION */
+        .story-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            margin-bottom: 60px;
+            padding: 40px 30px;
+        }
+
+        .story-block {
+            margin-bottom: 40px;
+        }
+
+        .story-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-label {
+            display: inline-block;
+            background: #ff6b35;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .story-block h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .story-block p {
+            font-size: 16px;
+            color: #b0b0b0;
+            margin-bottom: 12px;
+        }
+
+        .story-block ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .story-block li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #b0b0b0;
+            font-size: 15px;
+        }
+
+        .story-block li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            padding: 60px 0;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .form-container h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .form-container .form-intro {
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ff6b35;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .form-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-option label {
+            margin: 0;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 30px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            margin-top: 60px;
+        }
+
+        .footer-info {
+            margin-bottom: 15px;
+        }
+
+        .footer-info a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info a:hover {
+            color: #ff5722;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .story-section {
+                padding: 30px 20px;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .story-block h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .story-section, .form-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Tiago <span>Ribeiro</span></div>
+                <div style="font-size: 12px; color: #666;">Otimização de Processos</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <h1>Sua metalmecânica está <span class="highlight">deixando dinheiro na mesa</span>?</h1>
+                <p>Vamos juntos desenvolver soluções customizadas para resolver os problemas da sua empresa de forma ágil.</p>
+            </section>
+
+            <!-- STORYTELLING -->
+            <section class="story-section">
+                <div class="story-block">
+                    <span class="story-label">Situação Atual</span>
+                    <h2>Você está onde a maioria das metalmecânicas está</h2>
+                    <p>Você trabalha muito, mas não sabe exatamente por que o dinheiro não sobra. Seus funcionários estão ocupados, mas nem sempre produzindo o máximo. E quando um cliente reclama de atraso, você fica preso "apagando incêndios".</p>
+                </div>
+
+                <div class="story-block">
+                    <span class="story-label">O Problema Real</span>
+                    <h2>Não é falta de trabalho. É falta de visibilidade.</h2>
+                    <p>Você não consegue ver claramente onde estão os gargalos que impedem seu crescimento. Atrasos, custos invisíveis, retrabalho, falta de material, qualidade inconsistente. Cada um desses problemas "come" seu lucro silenciosamente.</p>
+                </div>
+
+                <div class="story-block">
+                    <span class="story-label">A Solução</span>
+                    <h2>Não vendemos soluções prontas. Construímos juntos.</h2>
+                    <p>Cada metalmecânica é única. Por isso, não oferecemos um "pacote padrão". Primeiro, entendemos profundamente seus desafios. Depois, desenvolvemos uma solução customizada (consultoria + tecnologia) que resolve SEUS problemas específicos em 1-2 meses.</p>
+                    <p style="margin-top: 15px;"><strong>Preencha o formulário abaixo e vamos começar essa jornada juntos.</strong></p>
+                </div>
+            </section>
+
+            <!-- FORM SECTION -->
+            <section class="form-section">
+                <div class="form-container">
+                    <h3>Formulário de Análise</h3>
+                    <p class="form-intro">Preencha com atenção. Suas respostas são o primeiro passo para construirmos uma solução que trará resultados reais para o seu negócio. <strong>Tempo estimado: 15-20 minutos.</strong></p>
+                    
+                    <form id="diagnosticoForm">
+                        <!-- PARTE 1: INFORMAÇÕES GERAIS -->
+                        <div class="form-section-title">PARTE 1: Informações Gerais</div>
+
+                        <div class="form-group">
+                            <label for="empresa">1. Nome da Empresa *</label>
+                            <input type="text" id="empresa" name="empresa" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nome_cargo">2. Seu Nome e Cargo *</label>
+                            <input type="text" id="nome_cargo" name="nome_cargo" placeholder="Ex: João Silva - Diretor" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp (com DDD) *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(27) 99999-9999" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="funcionarios">3. Número de Funcionários *</label>
+                            <input type="number" id="funcionarios" name="funcionarios" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="produto_servico">4. Principal tipo de produto/serviço *</label>
+                            <input type="text" id="produto_servico" name="produto_servico" placeholder="Ex: Usinagem de precisão, caldeiraria, etc." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="maior_desafio_inicial">5. Qual o maior desafio que você enfrenta hoje na sua empresa? (Descreva em uma frase) *</label>
+                            <textarea id="maior_desafio_inicial" name="maior_desafio_inicial" required></textarea>
+                        </div>
+
+                        <!-- PARTE 2: DIAGNÓSTICO OPERACIONAL -->
+                        <div class="form-section-title">PARTE 2: Diagnóstico Operacional (Chão de Fábrica)</div>
+
+                        <div class="form-group">
+                            <label>6. Como você controla as ordens de produção? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="pcp_excel" name="controle_producao" value="Planilha Excel" required>
+                                    <label for="pcp_excel">Planilha Excel</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="pcp_papel" name="controle_producao" value="Quadros brancos / Papel">
+                                    <label for="pcp_papel">Quadros brancos / Papel</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="pcp_erp" name="controle_producao" value="Sistema ERP / Software específico">
+                                    <label for="pcp_erp">Sistema ERP / Software específico</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="pcp_sem" name="controle_producao" value="Não temos um controle formal">
+                                    <label for="pcp_sem">Não temos um controle formal</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>7. Com que frequência ocorrem atrasos na entrega para os clientes? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="atraso_raro" name="frequencia_atrasos" value="Raramente (menos de 5% dos pedidos)" required>
+                                    <label for="atraso_raro">Raramente (menos de 5% dos pedidos)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="atraso_as_vezes" name="frequencia_atrasos" value="Às vezes (5-15% dos pedidos)">
+                                    <label for="atraso_as_vezes">Às vezes (5-15% dos pedidos)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="atraso_freq" name="frequencia_atrasos" value="Frequentemente (15-30% dos pedidos)">
+                                    <label for="atraso_freq">Frequentemente (15-30% dos pedidos)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="atraso_sempre" name="frequencia_atrasos" value="Quase sempre (mais de 30% dos pedidos)">
+                                    <label for="atraso_sempre">Quase sempre (mais de 30% dos pedidos)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>8. Você sabe dizer, em tempo real, em que etapa da produção está cada ordem de serviço? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="vis_sim" name="visibilidade_producao" value="Sim, com precisão" required>
+                                    <label for="vis_sim">Sim, com precisão</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="vis_ideia" name="visibilidade_producao" value="Tenho uma ideia, mas não é em tempo real">
+                                    <label for="vis_ideia">Tenho uma ideia, mas não é em tempo real</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="vis_nao" name="visibilidade_producao" value="Não, a informação é descentralizada">
+                                    <label for="vis_nao">Não, a informação é descentralizada</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>9. Como você mede a qualidade dos seus produtos? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="qual_visual" name="medicao_qualidade" value="Inspeção visual no final do processo" required>
+                                    <label for="qual_visual">Inspeção visual no final do processo</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="qual_formal" name="medicao_qualidade" value="Medições e testes formais">
+                                    <label for="qual_formal">Medições e testes formais</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="qual_feedback" name="medicao_qualidade" value="Apenas pelo feedback/reclamação do cliente">
+                                    <label for="qual_feedback">Apenas pelo feedback/reclamação do cliente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="qual_sem" name="medicao_qualidade" value="Não temos um processo formal de medição">
+                                    <label for="qual_sem">Não temos um processo formal de medição</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>10. Qual é a sua taxa de retrabalho ou refugo (peças com defeito)? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="retrab_nao_sei" name="taxa_retrabalho" value="Não sei medir" required>
+                                    <label for="retrab_nao_sei">Não sei medir</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="retrab_baixa" name="taxa_retrabalho" value="Baixa (menos de 2%)">
+                                    <label for="retrab_baixa">Baixa (menos de 2%)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="retrab_media" name="taxa_retrabalho" value="Média (2-5%)">
+                                    <label for="retrab_media">Média (2-5%)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="retrab_alta" name="taxa_retrabalho" value="Alta (mais de 5%)">
+                                    <label for="retrab_alta">Alta (mais de 5%)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>11. Com que frequência suas máquinas param por quebras inesperadas? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="quebra_raro" name="frequencia_quebras" value="Raramente (menos de 1 vez por mês)" required>
+                                    <label for="quebra_raro">Raramente (menos de 1 vez por mês)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="quebra_ocasional" name="frequencia_quebras" value="Ocasionalmente (1-3 vezes por mês)">
+                                    <label for="quebra_ocasional">Ocasionalmente (1-3 vezes por mês)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="quebra_freq" name="frequencia_quebras" value="Frequentemente (mais de 3 vezes por mês)">
+                                    <label for="quebra_freq">Frequentemente (mais de 3 vezes por mês)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>12. Você possui um plano de manutenção preventiva? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="manut_sim_rigoroso" name="manutencao_preventiva" value="Sim, e seguimos rigorosamente" required>
+                                    <label for="manut_sim_rigoroso">Sim, e seguimos rigorosamente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="manut_sim_nem_sempre" name="manutencao_preventiva" value="Sim, mas nem sempre conseguimos seguir">
+                                    <label for="manut_sim_nem_sempre">Sim, mas nem sempre conseguimos seguir</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="manut_nao" name="manutencao_preventiva" value="Não, a manutenção é apenas corretiva (quando quebra)">
+                                    <label for="manut_nao">Não, a manutenção é apenas corretiva (quando quebra)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>13. Com que frequência a produção para por falta de matéria-prima? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="falta_mp_raro" name="falta_materia_prima" value="Raramente" required>
+                                    <label for="falta_mp_raro">Raramente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="falta_mp_ocasional" name="falta_materia_prima" value="Ocasionalmente">
+                                    <label for="falta_mp_ocasional">Ocasionalmente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="falta_mp_freq" name="falta_materia_prima" value="Frequentemente">
+                                    <label for="falta_mp_freq">Frequentemente</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>14. Você sabe o valor exato do seu estoque (matéria-prima + produtos acabados) hoje? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="estoque_sim" name="controle_estoque" value="Sim, temos um controle preciso e em tempo real" required>
+                                    <label for="estoque_sim">Sim, temos um controle preciso e em tempo real</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="estoque_estimativa" name="controle_estoque" value="Tenho uma estimativa aproximada">
+                                    <label for="estoque_estimativa">Tenho uma estimativa aproximada</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="estoque_nao" name="controle_estoque" value="Não sei">
+                                    <label for="estoque_nao">Não sei</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PARTE 3.5: DIAGNÓSTICO DE RECURSOS HUMANOS -->
+                        <div class="form-section-title">PARTE 3.5: Diagnóstico de Recursos Humanos</div>
+
+                        <div class="form-group">
+                            <label>15A. Como você avalia a rotatividade (turnover) de funcionários na sua empresa? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="turnover_baixo" name="turnover_funcionarios" value="Baixa - funcionários ficam anos na empresa" required>
+                                    <label for="turnover_baixo">Baixa - funcionários ficam anos na empresa</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="turnover_medio" name="turnover_funcionarios" value="Média - alguns saem, mas a maioria fica">
+                                    <label for="turnover_medio">Média - alguns saem, mas a maioria fica</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="turnover_alto" name="turnover_funcionarios" value="Alta - temos dificuldade em reter talentos">
+                                    <label for="turnover_alto">Alta - temos dificuldade em reter talentos</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>15B. Você tem dificuldade para encontrar mão de obra qualificada? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="mao_obra_nao" name="dificuldade_mao_obra" value="Não, conseguimos contratar facilmente" required>
+                                    <label for="mao_obra_nao">Não, conseguimos contratar facilmente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="mao_obra_as_vezes" name="dificuldade_mao_obra" value="Às vezes, para funções específicas">
+                                    <label for="mao_obra_as_vezes">Às vezes, para funções específicas</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="mao_obra_sempre" name="dificuldade_mao_obra" value="Sim, é um grande desafio encontrar profissionais qualificados">
+                                    <label for="mao_obra_sempre">Sim, é um grande desafio encontrar profissionais qualificados</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>15C. Como você lida com treinamento e capacitação dos funcionários? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="trein_formal" name="treinamento_funcionarios" value="Temos um programa formal de treinamentos" required>
+                                    <label for="trein_formal">Temos um programa formal de treinamentos</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="trein_informal" name="treinamento_funcionarios" value="Treinamento informal, no dia a dia">
+                                    <label for="trein_informal">Treinamento informal, no dia a dia</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="trein_pouco" name="treinamento_funcionarios" value="Fazemos pouco ou nenhum treinamento">
+                                    <label for="trein_pouco">Fazemos pouco ou nenhum treinamento</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PARTE 3.6: DIAGNÓSTICO DE COMPRAS E FORNECEDORES -->
+                        <div class="form-section-title">PARTE 3.6: Diagnóstico de Compras e Fornecedores</div>
+
+                        <div class="form-group">
+                            <label>15D. Como você gerencia seus fornecedores de matéria-prima? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_sistema" name="gestao_fornecedores" value="Temos um sistema de gestão de fornecedores" required>
+                                    <label for="forn_sistema">Temos um sistema de gestão de fornecedores</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_planilha" name="gestao_fornecedores" value="Controlamos por planilhas ou cadernos">
+                                    <label for="forn_planilha">Controlamos por planilhas ou cadernos</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="forn_sem_controle" name="gestao_fornecedores" value="Não temos um controle formal">
+                                    <label for="forn_sem_controle">Não temos um controle formal</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>15E. Com que frequência você negocia preços com seus fornecedores? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="negoc_regular" name="negociacao_fornecedores" value="Regularmente (trimestral ou semestral)" required>
+                                    <label for="negoc_regular">Regularmente (trimestral ou semestral)</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="negoc_anual" name="negociacao_fornecedores" value="Anualmente">
+                                    <label for="negoc_anual">Anualmente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="negoc_raramente" name="negociacao_fornecedores" value="Raramente ou nunca">
+                                    <label for="negoc_raramente">Raramente ou nunca</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>15F. Qual é o principal problema com seus fornecedores? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="prob_forn_preco" name="problema_fornecedores" value="Preços altos" required>
+                                    <label for="prob_forn_preco">Preços altos</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="prob_forn_prazo" name="problema_fornecedores" value="Atrasos nas entregas">
+                                    <label for="prob_forn_prazo">Atrasos nas entregas</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="prob_forn_qualidade" name="problema_fornecedores" value="Qualidade inconsistente">
+                                    <label for="prob_forn_qualidade">Qualidade inconsistente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="prob_forn_nenhum" name="problema_fornecedores" value="Não temos problemas significativos">
+                                    <label for="prob_forn_nenhum">Não temos problemas significativos</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PARTE 3: DIAGNÓSTICO FINANCEIRO -->
+                        <div class="form-section-title">PARTE 3: Diagnóstico Financeiro</div>
+
+                        <div class="form-group">
+                            <label>15. Você sabe qual é o custo exato para produzir cada um dos seus produtos? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="custo_sim" name="calculo_custo" value="Sim, calculamos o custo detalhado para cada produto" required>
+                                    <label for="custo_sim">Sim, calculamos o custo detalhado para cada produto</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="custo_estimativa" name="calculo_custo" value="Temos uma estimativa, mas não é precisa">
+                                    <label for="custo_estimativa">Temos uma estimativa, mas não é precisa</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="custo_markup" name="calculo_custo" value="Não, usamos um markup geral sobre o preço da matéria-prima">
+                                    <label for="custo_markup">Não, usamos um markup geral sobre o preço da matéria-prima</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>16. Qual a sua maior dificuldade na gestão financeira? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="fin_fluxo" name="dificuldade_financeira" value="Controlar o fluxo de caixa" required>
+                                    <label for="fin_fluxo">Controlar o fluxo de caixa</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="fin_margem" name="dificuldade_financeira" value="Saber a margem de lucro real de cada venda">
+                                    <label for="fin_margem">Saber a margem de lucro real de cada venda</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="fin_preco" name="dificuldade_financeira" value="Formar o preço de venda corretamente">
+                                    <label for="fin_preco">Formar o preço de venda corretamente</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="fin_reduzir" name="dificuldade_financeira" value="Reduzir custos de produção">
+                                    <label for="fin_reduzir">Reduzir custos de produção</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>17. Você consegue identificar facilmente quais são os produtos/clientes mais e menos lucrativos? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="lucr_sim" name="identificacao_lucratividade" value="Sim, temos relatórios claros sobre isso" required>
+                                    <label for="lucr_sim">Sim, temos relatórios claros sobre isso</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="lucr_trabalho" name="identificacao_lucratividade" value="Consigo, mas dá muito trabalho manual">
+                                    <label for="lucr_trabalho">Consigo, mas dá muito trabalho manual</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="lucr_nao" name="identificacao_lucratividade" value="Não consigo identificar">
+                                    <label for="lucr_nao">Não consigo identificar</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PARTE 4: DIAGNÓSTICO DE GESTÃO E COMERCIAL -->
+                        <div class="form-section-title">PARTE 4: Diagnóstico de Gestão e Comercial</div>
+
+                        <div class="form-group">
+                            <label>18. Como é a comunicação entre a área de vendas, engenharia/projeto e a produção? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="com_fluida" name="comunicacao_areas" value="Fluida e integrada, com sistemas ou reuniões eficientes" required>
+                                    <label for="com_fluida">Fluida e integrada, com sistemas ou reuniões eficientes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="com_ruidos" name="comunicacao_areas" value="Funciona, mas com ruídos e retrabalho frequentes">
+                                    <label for="com_ruidos">Funciona, mas com ruídos e retrabalho frequentes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="com_gargalo" name="comunicacao_areas" value="É o nosso maior gargalo, as áreas não se falam direito">
+                                    <label for="com_gargalo">É o nosso maior gargalo, as áreas não se falam direito</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>19. Qual é o principal motivo pelo qual você perde vendas para a concorrência? *</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="perde_preco" name="motivo_perde_vendas" value="Preço" required>
+                                    <label for="perde_preco">Preço</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="perde_prazo" name="motivo_perde_vendas" value="Prazo de entrega">
+                                    <label for="perde_prazo">Prazo de entrega</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="perde_qualidade" name="motivo_perde_vendas" value="Qualidade">
+                                    <label for="perde_qualidade">Qualidade</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="perde_nao_sei" name="motivo_perde_vendas" value="Não sei">
+                                    <label for="perde_nao_sei">Não sei</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>20. Qual das áreas abaixo você considera mais urgente para melhorar na sua empresa? (Escolha até 2) *</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_pcp" name="areas_urgentes" value="Organização da produção (PCP)">
+                                    <label for="urgente_pcp">Organização da produção (PCP)</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_custos" name="areas_urgentes" value="Redução de custos e desperdícios">
+                                    <label for="urgente_custos">Redução de custos e desperdícios</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_qualidade" name="areas_urgentes" value="Controle de qualidade">
+                                    <label for="urgente_qualidade">Controle de qualidade</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_financeira" name="areas_urgentes" value="Gestão financeira e de custos">
+                                    <label for="urgente_financeira">Gestão financeira e de custos</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_comunicacao" name="areas_urgentes" value="Comunicação entre as equipes">
+                                    <label for="urgente_comunicacao">Comunicação entre as equipes</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="urgente_estoque" name="areas_urgentes" value="Gestão de estoque">
+                                    <label for="urgente_estoque">Gestão de estoque</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PARTE 5: PERGUNTAS FINAIS -->
+                        <div class="form-section-title">PARTE 5: Perguntas Finais</div>
+
+                        <div class="form-group">
+                            <label for="problema_unico">21. Se você pudesse resolver UM ÚNICO problema na sua empresa hoje, qual seria? *</label>
+                            <textarea id="problema_unico" name="problema_unico" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tentativas_anteriores">22. O que você já tentou fazer para resolver esse problema? O que funcionou e o que não funcionou? *</label>
+                            <textarea id="tentativas_anteriores" name="tentativas_anteriores" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objetivo_12_meses">23. Qual é o seu principal objetivo para a empresa nos próximos 12 meses? (Ex: aumentar faturamento, reduzir custos, expandir, etc.) *</label>
+                            <textarea id="objetivo_12_meses" name="objetivo_12_meses" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar e Desenvolver Minha Solução</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <strong>Tiago Ribeiro</strong> | Consultoria em Otimização de Processos
+            </div>
+            <div class="footer-info">
+                Email: <a href="mailto:tiagosantosr59@gmail.com">tiagosantosr59@gmail.com</a>
+            </div>
+            <div class="footer-info">
+                CNPJ: [Seu CNPJ aqui] | Espírito Santo, Brasil
+            </div>
+            <div style="margin-top: 20px; color: #444;">
+                © 2025 Tiago Ribeiro. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script>
+        // Configuração do Supabase
+        const SUPABASE_URL = 'https://omrodclevaidlijnnqeq.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tcm9kY2xldmFpZGxpam5ucWVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2MjUwNjUsImV4cCI6MjA4MDIwMTA2NX0.J_Xwh_0aju6-bxGGAk7PxkfIs_5Vr4_01EVFECcpOpE';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Validação de checkbox (máximo 2 selecionados)
+        const checkboxes = document.querySelectorAll('input[name="areas_urgentes"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('input[name="areas_urgentes"]:checked').length;
+                if (checkedCount > 2) {
+                    this.checked = false;
+                    alert('Você pode selecionar no máximo 2 áreas.');
+                }
+            });
+        });
+
+        // Submissão do formulário
+        document.getElementById('diagnosticoForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Desabilitar botão de submit para evitar duplo envio
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            try {
+                // Coletar dados do formulário
+                const formData = new FormData(this);
+                const data = {};
+                
+                formData.forEach((value, key) => {
+                    if (key === 'areas_urgentes') {
+                        if (!data[key]) data[key] = [];
+                        data[key].push(value);
+                    } else {
+                        data[key] = value;
+                    }
+                });
+
+                // Converter número de funcionários para integer
+                if (data.funcionarios) {
+                    data.funcionarios = parseInt(data.funcionarios);
+                }
+
+                // Adicionar timestamp
+                data.data_preenchimento = new Date().toISOString();
+
+                console.log('Enviando dados:', data);
+
+                // Enviar para o Supabase
+                const { data: result, error } = await supabase
+                    .from('leads_diagnostico')
+                    .insert([data])
+                    .select();
+
+                if (error) {
+                    console.error('Erro ao salvar:', error);
+                    alert('Erro ao enviar formulário. Por favor, tente novamente ou entre em contato via email: tiagosantosr59@gmail.com');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    return;
+                }
+
+                console.log('Dados salvos com sucesso:', result);
+
+                // Mensagem de sucesso
+                alert('✅ Obrigado! Suas respostas foram enviadas com sucesso.\n\nEntraremos em contato em breve para desenvolvermos juntos a solução ideal para sua empresa.');
+                
+                // Limpar formulário
+                this.reset();
+                
+            } catch (err) {
+                console.error('Erro inesperado:', err);
+                alert('Erro ao enviar formulário. Por favor, tente novamente ou entre em contato via email: tiagosantosr59@gmail.com');
+            } finally {
+                // Reabilitar botão
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    </script>
+</body>
+</html>
