@@ -433,6 +433,10 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
             .header-content {
                 flex-direction: column;
                 gap: 15px;
@@ -443,23 +447,105 @@
             }
 
             .story-section {
-                padding: 30px 20px;
+                padding: 30px 15px;
+                margin-bottom: 40px;
+            }
+
+            .form-section {
+                padding: 40px 0;
             }
 
             .form-container {
-                padding: 30px 20px;
+                padding: 25px 15px;
+                border-radius: 8px;
+            }
+
+            .form-container h3 {
+                font-size: 20px;
             }
 
             .story-block h2 {
-                font-size: 22px;
+                font-size: 20px;
+            }
+
+            .form-group label {
+                font-size: 15px;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+
+            .radio-option,
+            .checkbox-option {
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            .radio-option label,
+            .checkbox-option label {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .radio-option input[type="radio"],
+            .checkbox-option input[type="checkbox"] {
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px;
+                padding: 12px 10px;
             }
 
             .button-group {
                 flex-direction: column;
+                gap: 12px;
+                margin-top: 25px;
             }
 
             .btn {
                 width: 100%;
+                padding: 16px;
+                font-size: 13px;
+            }
+
+            .progress-text {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .form-container {
+                padding: 20px 12px;
+            }
+
+            .form-container h3 {
+                font-size: 18px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .radio-option,
+            .checkbox-option {
+                padding: 8px;
+            }
+
+            .radio-option label,
+            .checkbox-option label {
+                font-size: 12px;
+            }
+
+            .btn {
+                padding: 14px;
+                font-size: 12px;
             }
         }
     </style>
