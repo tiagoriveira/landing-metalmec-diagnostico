@@ -1028,13 +1028,8 @@
 
                 console.log('Dados salvos com sucesso:', result);
 
-                // Mensagem de sucesso
-                alert('✅ Obrigado! Suas respostas foram enviadas com sucesso.\n\nEntraremos em contato em breve para desenvolvermos juntos a solução ideal para sua empresa.');
-                
-                // Limpar formulário
-                form.reset();
-                currentQuestion = 1;
-                showQuestion(1);
+                // Redirecionar para página de obrigado
+                window.location.href = 'obrigado.html';
                 
             } catch (err) {
                 console.error('Erro inesperado:', err);
